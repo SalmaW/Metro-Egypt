@@ -193,4 +193,9 @@ public class MetroActivity extends AppCompatActivity implements TextToSpeech.OnI
     public void onInit(int status) {
 
     }
+
+    public void goToMap(View view) {
+        Intent goTo = new Intent(this, MapActivity.class);
+        startActivity(goTo);
+    }
 }
