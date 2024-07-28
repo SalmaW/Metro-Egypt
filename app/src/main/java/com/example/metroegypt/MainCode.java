@@ -1,6 +1,13 @@
 package com.example.metroegypt;
 
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Deque;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Scanner;
+import java.util.Set;
 
 public class MainCode {
     public static ArrayList<String> routeStations = new ArrayList<>();
@@ -281,7 +288,7 @@ public class MainCode {
         }
     }
 
-    static void getNewDirection(String startStation, String endStation) {
+    static String getNewDirection(String startStation, String endStation) {
         // Find lines for start and end stations
         List<Integer> startLines = findLines(startStation);
         List<Integer> endLines = findLines(endStation);
@@ -302,14 +309,15 @@ public class MainCode {
                     "Towards " + lineStations.get(lineStations.size() - 1) :
                     "Towards " + lineStations.get(0);
 
-            System.out.println("Direction of Line " + line + ": " + direction);
+            return "Direction of Line " + line + ": " + direction;
         }
 
 
+        return null;
     }
 
-    static void calculateEstimatedTime(int count) {
-        System.out.println("Estimated Time: " + (count * 2) + " minutes.");
+    static String calculateEstimatedTime(int count) {
+        return (count * 2) + " min";
     }
 
     public static int getPrice(int numberOfStations) {
@@ -324,28 +332,30 @@ public class MainCode {
         }
     }
 
-    public static void printStations(String start, String end, int line) {
+    public static String printStations(String start, String end, int line) {
         ArrayList<String> lineStations = getLineName(line);
         int startIndex = lineStations.indexOf(start);
         int endIndex = lineStations.indexOf(end);
 
+        StringBuilder route = new StringBuilder();
         if (startIndex <= endIndex) {
             for (int i = startIndex; i <= endIndex; i++) {
-                System.out.print(lineStations.get(i));
                 routeStations.add(lineStations.get(i));
+                route.append(lineStations.get(i));
                 if (i < endIndex) {
-                    System.out.print(" -> ");
+                    route.append(" -> ");
                 }
             }
         } else {
             for (int i = startIndex; i >= endIndex; i--) {
-                System.out.print(lineStations.get(i));
                 routeStations.add(lineStations.get(i));
+                route.append(lineStations.get(i));
                 if (i > endIndex) {
-                    System.out.print(" -> ");
+                    route.append(" -> ");
                 }
             }
         }
+        return route.toString();
     }
 
     public static List<String> getNeighbors(String station) {

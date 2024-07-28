@@ -36,10 +36,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="64dp"
-        android:tint="#323232"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/metroLogo"
-        app:srcCompat="@drawable/location" />
+        app:srcCompat="@drawable/location"
+        app:tint="#323232" />
 
     <EditText
         android:id="@+id/startLoc"
@@ -74,11 +74,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
-        android:tint="#323232"
         app:layout_constraintEnd_toEndOf="@+id/startLocIcon"
         app:layout_constraintStart_toStartOf="@+id/startLocIcon"
         app:layout_constraintTop_toBottomOf="@+id/startSpinner"
-        app:srcCompat="@drawable/location" />
+        app:srcCompat="@drawable/location"
+        app:tint="#323232" />
 
     <Spinner
         android:id="@+id/startSpinner"
@@ -110,10 +110,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:backgroundTint="#BF1414"
         android:onClick="calcRoute"
         android:text="Route"
-        android:backgroundTint="#BF1414"
         app:layout_constraintEnd_toEndOf="@+id/endSpinner"
         app:layout_constraintStart_toStartOf="@+id/endSpinner"
         app:layout_constraintTop_toBottomOf="@+id/endSpinner" />
+
+    <ImageView
+        android:id="@+id/soundIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="changeSound"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/sound_on"
+        app:tint="#BF1414" />
 </androidx.constraintlayout.widget.ConstraintLayout>
