@@ -53,4 +53,9 @@ public class MainActivity extends AppCompatActivity {
         Intent goTo = new Intent(this, MetroActivity.class);
         startActivity(goTo);
     }
+
+    public void goTo(View view) {
+        Intent goTo = new Intent(this, LocationActivity.class);
+        startActivity(goTo);
+    }
 }

@@ -3,6 +3,7 @@ package com.example.metroegypt;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -11,6 +12,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -18,33 +22,24 @@ import java.util.Set;
 
 public class RouteActivity extends AppCompatActivity {
     TextView textView, timeTxt, priceTxt, noStationsTxt, routeDesc, result;
+    ImageView imageView4, imageView5, imageView7, metroLogo;
     int count = 0;
     int price = 0;
     String startStation = "";
     String endStation = "";
 
-
-//    protected void onStart() {
-//        super.onStart();
-//        YoYo.with(Techniques.FadeIn).duration(2000).playOn(metroLogo);
-//        YoYo.with(Techniques.FadeIn).duration(2000).playOn(appName);
-//        YoYo.with(Techniques.FadeIn).duration(2000).playOn(routeButton);
-//        YoYo.with(Techniques.FadeInLeft).duration(2000).playOn(startLocIcon);
-//        YoYo.with(Techniques.FadeInLeft).duration(2000).playOn(endLocIcon);
-//        YoYo.with(Techniques.FlipInX).duration(2000).playOn(startLoc);
-//        YoYo.with(Techniques.FlipInX).duration(2000).playOn(endLoc);
-//        YoYo.with(Techniques.FlipInX).duration(2000).playOn(startSpinner);
-//        YoYo.with(Techniques.FlipInX).duration(2000).playOn(endSpinner);
-//
-//
-////        YoYo.with(Techniques.Shake).delay(2000).duration(700).playOn(whereTxt);
-//    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        YoYo.with(Techniques.Shake).duration(700).playOn(imageView4);
+        YoYo.with(Techniques.Shake).duration(700).playOn(imageView5);
+        YoYo.with(Techniques.Shake).duration(700).playOn(imageView7);
+    }
 
 
     @Override
     public void onBackPressed() {
-        MainCode.routeStations = new ArrayList<>();
-//        price = 0;
+        MainCode.routeStations.clear();
         timeTxt.setText("");
         priceTxt.setText("");
         noStationsTxt.setText("");
@@ -63,6 +58,10 @@ public class RouteActivity extends AppCompatActivity {
         noStationsTxt = findViewById(R.id.noStationsTxt);
         routeDesc = findViewById(R.id.routeDesc);
         result = findViewById(R.id.result);
+        metroLogo = findViewById(R.id.metroLogo);
+        imageView4 = findViewById(R.id.imageView4);
+        imageView5 = findViewById(R.id.imageView5);
+        imageView7 = findViewById(R.id.imageView7);
 
 
         startStation = getIntent().getStringExtra("startStation");
@@ -80,6 +79,11 @@ public class RouteActivity extends AppCompatActivity {
         });
     }
 
+    public void mainPage(View view) {
+        Intent goTo = new Intent(this, MainActivity.class);
+        startActivity(goTo);
+    }
+
     public void functions(String startStation, String endStation) {
         List<Integer> startLines = MainCode.findLines(startStation);
         List<Integer> endLines = MainCode.findLines(endStation);
@@ -90,7 +94,7 @@ public class RouteActivity extends AppCompatActivity {
         if (!commonLines.isEmpty()) {
             int commonLine = commonLines.iterator().next();
             routeDesc.setText(MainCode.getNewDirection(startStation, endStation));
-            result.setText("Take Line " + commonLine + " from " + startStation.toUpperCase() + " to " + endStation.toUpperCase());
+            result.setText("Take Line " + commonLine + " from " + startStation.toUpperCase() + " to " + endStation.toUpperCase() + "\n");
             result.append("\n" + MainCode.printStations(startStation, endStation, commonLine));
             count = MainCode.routeStations.size();
         } else {
@@ -108,7 +112,7 @@ public class RouteActivity extends AppCompatActivity {
             count = MainCode.routeStations.size() - 1;
 
         }
-        noStationsTxt.setText(String.valueOf(count));
+        noStationsTxt.setText(count + " Stations");
         price = MainCode.getPrice(count);
         priceTxt.setText(price + " EGP");
         timeTxt.setText(MainCode.calculateEstimatedTime(count));

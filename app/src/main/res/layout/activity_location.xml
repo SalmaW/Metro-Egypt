@@ -5,18 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MetroActivity">
-
-    <ImageView
-        android:id="@+id/metroLogo"
-        android:layout_width="80dp"
-        android:layout_height="71dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:onClick="mainPage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/metro_eg" />
+    tools:context=".LocationActivity">
 
     <TextView
         android:id="@+id/textView"
@@ -29,6 +18,17 @@
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/metroLogo"
+        android:layout_width="80dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="mainPage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/metro_eg" />
 
     <ImageView
         android:id="@+id/startLocIcon"
@@ -48,7 +48,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="48dp"
         android:ems="10"
-        android:enabled="false"
         android:hint="ex. Maadi"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="@+id/startLocIcon"
@@ -63,7 +62,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="48dp"
         android:ems="10"
-        android:enabled="false"
         android:hint="ex. New Cairo"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="@+id/endLocIcon"
@@ -75,49 +73,24 @@
         android:id="@+id/endLocIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="64dp"
-        app:layout_constraintEnd_toEndOf="@+id/startLocIcon"
-        app:layout_constraintStart_toStartOf="@+id/startLocIcon"
-        app:layout_constraintTop_toBottomOf="@+id/startSpinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startLocIcon"
         app:srcCompat="@drawable/location"
         app:tint="#323232" />
 
-    <Spinner
-        android:id="@+id/startSpinner"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="48dp"
-        android:entries="@array/stations"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.422"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/startLoc" />
-
-    <Spinner
-        android:id="@+id/endSpinner"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="48dp"
-        android:entries="@array/stations"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/endLoc" />
-
-    <Button
-        android:id="@+id/routeButton"
+    <ImageView
+        android:id="@+id/mapIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="#BF1414"
-        android:onClick="calcRoute"
-        android:text="Route"
-        app:layout_constraintEnd_toEndOf="@+id/endSpinner"
-        app:layout_constraintStart_toStartOf="@+id/endSpinner"
-        app:layout_constraintTop_toBottomOf="@+id/endSpinner" />
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="goToMap"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/map"
+        app:tint="#BF1414" />
 
     <ImageView
         android:id="@+id/soundIcon"
@@ -131,15 +104,15 @@
         app:srcCompat="@drawable/sound_on"
         app:tint="#BF1414" />
 
-    <ImageView
-        android:id="@+id/mapIcon"
+    <Button
+        android:id="@+id/routeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:onClick="goToMap"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/map"
-        app:tint="#BF1414" />
+        android:layout_marginTop="64dp"
+        android:backgroundTint="#BF1414"
+        android:onClick="calcRoute"
+        android:text="Route"
+        app:layout_constraintEnd_toEndOf="@+id/endLoc"
+        app:layout_constraintStart_toStartOf="@+id/endLocIcon"
+        app:layout_constraintTop_toBottomOf="@+id/endLoc" />
 </androidx.constraintlayout.widget.ConstraintLayout>
