@@ -1,6 +1,8 @@
 package com.example.metroegypt;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -18,6 +20,8 @@ public class RouteActivity extends AppCompatActivity {
     TextView textView, timeTxt, priceTxt, noStationsTxt, routeDesc, result;
     int count = 0;
     int price = 0;
+    String startStation = "";
+    String endStation = "";
 
 
 //    protected void onStart() {
@@ -61,8 +65,8 @@ public class RouteActivity extends AppCompatActivity {
         result = findViewById(R.id.result);
 
 
-        String startStation = getIntent().getStringExtra("startStation");
-        String endStation = getIntent().getStringExtra("endStation");
+        startStation = getIntent().getStringExtra("startStation");
+        endStation = getIntent().getStringExtra("endStation");
 
         functions(startStation, endStation);
 
@@ -109,5 +113,12 @@ public class RouteActivity extends AppCompatActivity {
         priceTxt.setText(price + " EGP");
         timeTxt.setText(MainCode.calculateEstimatedTime(count));
 
+    }
+
+    public void goToPaths(View view) {
+        Intent goTo = new Intent(this, AllPathsActivity.class);
+        goTo.putExtra("startStation", startStation);
+        goTo.putExtra("endStation", endStation);
+        startActivity(goTo);
     }
 }

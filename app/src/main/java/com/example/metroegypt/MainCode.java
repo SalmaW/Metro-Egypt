@@ -122,12 +122,11 @@ public class MainCode {
         int min = allPaths.get(0).size();
         int shortIndex = 0;
         for (List<String> path : allPaths) {
-            count = path.size();
             if (path.size() < min) {
                 min = path.size();
                 shortIndex = allPaths.indexOf(path);
             }
-            System.out.println(path + "\n" + "Price is: " + getPrice(count));
+            System.out.println(path + "\n");
         }
         System.out.println("\nShortest Route: " + allPaths.get(shortIndex));
 
