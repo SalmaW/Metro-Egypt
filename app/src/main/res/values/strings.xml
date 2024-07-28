@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_name">MetroEgypt</string>
+    <string-array name="stations">
+        <item>Select Station</item>
+        <item>helwan</item>
+        <item>ain helwan</item>
+        <item>helwan university</item>
+        <item>wadi hof</item>
+        <item>hadayek helwan</item>
+        <item>el-maasara</item>
+        <item>tora el-asmant</item>
+        <item>kozzika</item>
+        <item>tora el-balad</item>
+        <item>sakanat el-maadi</item>
+        <item>el-maadi</item>
+        <item>hadayeq el-maadi</item>
+        <item>dar el-salam</item>
+        <item>el-zahraa</item>
+        <item>mar girgis</item>
+        <item>el-malek el-saleh</item>
+        <item>al-sayeda zeinab</item>
+        <item>saad zaghloul</item>
+        <item>sadat</item>
+        <item>nasser</item>
+        <item>orabi</item>
+        <item>al shohadaa</item>
+        <item>ghamra</item>
+        <item>el-demerdash</item>
+        <item>manshiet el-sadr</item>
+        <item>kobri el-qobba</item>
+        <item>hammamat el-qobba</item>
+        <item>saray el-qobba</item>
+        <item>hadayeq el-zaitoun</item>
+        <item>helmeyet el-zaitoun</item>
+        <item>el-matareyya</item>
+        <item>ain shams</item>
+        <item>ezbet el-nakhl</item>
+        <item>el-marg</item>
+        <item>new el-marg</item>
+        <item>el mounib</item>
+        <item>sakiat mekki</item>
+        <item>omm el misryeen</item>
+        <item>giza</item>
+        <item>faisal</item>
+        <item>cairo university</item>
+        <item>bohooth</item>
+        <item>dokki</item>
+        <item>opera</item>
+        <item>naguib</item>
+        <item>ataba</item>
+        <item>massara</item>
+        <item>road el-farag</item>
+        <item>sainte teresa</item>
+        <item>khalafawy</item>
+        <item>mezallat</item>
+        <item>koliet el-zeraa</item>
+        <item>shobra el kheima</item>
+        <item>adly mansour</item>
+        <item>hikestep</item>
+        <item>omar ibn al khattab</item>
+        <item>kebaa</item>
+        <item>hisham barakat</item>
+        <item>el nozha</item>
+        <item>el shames club</item>
+        <item>alf maskan</item>
+        <item>heliopolis</item>
+        <item>haroun</item>
+        <item>al ahram</item>
+        <item>koleyet el banat</item>
+        <item>cairo stadium</item>
+        <item>fair zone</item>
+        <item>abbassiya</item>
+        <item>abdou pasha</item>
+        <item>el geish</item>
+        <item>bab el shaaria</item>
+        <item>maspero</item>
+        <item>zamalek</item>
+        <item>kit kat</item>
+        <item>sudan st.</item>
+        <item>imbaba</item>
+        <item>el bohy</item>
+        <item>el qawmia</item>
+        <item>ring road</item>
+        <item>rod el farag corr</item>
+        <item>tawfikia</item>
+        <item>wadi el nile</item>
+        <item>gamet el dowel</item>
+        <item>boulak el dakrour</item>
+    </string-array>
+
+</resources>

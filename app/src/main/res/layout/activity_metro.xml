@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MetroActivity">
+
+    <ImageView
+        android:id="@+id/metroLogo"
+        android:layout_width="80dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="mainPage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/metro_eg" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Metro Egypt"
+        android:textColor="#BBBBBB"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/startLocIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:tint="#323232"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/metroLogo"
+        app:srcCompat="@drawable/location" />
+
+    <EditText
+        android:id="@+id/startLoc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="48dp"
+        android:ems="10"
+        android:hint="ex. Maadi"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/startLocIcon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/startLocIcon"
+        app:layout_constraintTop_toTopOf="@+id/startLocIcon" />
+
+    <EditText
+        android:id="@+id/endLoc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="48dp"
+        android:ems="10"
+        android:hint="ex. New Cairo"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/endLocIcon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/endLocIcon"
+        app:layout_constraintTop_toTopOf="@+id/endLocIcon" />
+
+    <ImageView
+        android:id="@+id/endLocIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:tint="#323232"
+        app:layout_constraintEnd_toEndOf="@+id/startLocIcon"
+        app:layout_constraintStart_toStartOf="@+id/startLocIcon"
+        app:layout_constraintTop_toBottomOf="@+id/startSpinner"
+        app:srcCompat="@drawable/location" />
+
+    <Spinner
+        android:id="@+id/startSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="48dp"
+        android:entries="@array/stations"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.422"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startLoc" />
+
+    <Spinner
+        android:id="@+id/endSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="48dp"
+        android:entries="@array/stations"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/endLoc" />
+
+    <Button
+        android:id="@+id/routeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:onClick="calcRoute"
+        android:text="Route"
+        android:backgroundTint="#BF1414"
+        app:layout_constraintEnd_toEndOf="@+id/endSpinner"
+        app:layout_constraintStart_toStartOf="@+id/endSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/endSpinner" />
+</androidx.constraintlayout.widget.ConstraintLayout>
