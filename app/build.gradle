@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.metroegypt"
-        minSdk 21
+        minSdk 23
         targetSdk 34
         versionCode 1
         versionName "1.0"
@@ -33,6 +33,10 @@ dependencies {
     implementation("com.github.mumayank:AirLocation:2.5.2")
     implementation("com.github.nisrulz:sensey:1.9.0")
     implementation("com.github.chrisbanes:PhotoView:2.3.0")
+    implementation('com.github.mumayank:AirLocation:2.5.2')
+
+//    implementation("com.ankushgrover:airlocation:1.0.5")
+
 
     implementation libs.appcompat
     implementation libs.material
